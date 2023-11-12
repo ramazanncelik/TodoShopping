@@ -14,6 +14,8 @@ app.use(body_parser_1.default.urlencoded({ extended: true }));
 const port = 9999;
 app.get('/api/getShoppingList', shoppingController_1.findAll);
 app.post('/api/addShoppingItem', shoppingController_1.create);
+app.put('/api/updateShoppingItem/:id', shoppingController_1.update);
+app.delete('/api/deleteShoppingItem/:id', shoppingController_1.deleteShoppingItem);
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
