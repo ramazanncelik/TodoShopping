@@ -1,8 +1,12 @@
 import Product from "../models/ShoppingItem";
 
-const shoppingList: Product[] = [
+let shoppingList: Product[] = [
     { id: 1, description: "2 adet ekmek alınacak", isCompleted: false },
     { id: 2, description: "1 paket süt alınacak", isCompleted: false }
 ];
 
-export default shoppingList;
+const updateShoppingList = async (newList: Product[]) => {
+    shoppingList = newList;
+}
+
+export { shoppingList, updateShoppingList };

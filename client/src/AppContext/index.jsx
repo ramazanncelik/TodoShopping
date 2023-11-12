@@ -14,7 +14,6 @@ const AppProvider = ({ children }) => {
     const getShoppingList = async () => {
         const result = await axios.get(`${serverUrl}/getShoppingList`);
         if (result.data.success) {
-            console.log(result.data.shoppingList)
             store.dispatch(setShoppingList(result.data.shoppingList));
         } else {
             store.dispatch(setShoppingList([]));
